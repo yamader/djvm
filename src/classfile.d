@@ -32,6 +32,11 @@ struct ClassFile {
 
 // 4.4. Constant Pool
 
+alias CONSTANTS = AliasSeq!(
+  CONSTANT_Class_info, CONSTANT_Fieldref_info, CONSTANT_Methodref_info, CONSTANT_InterfaceMethodref_info,
+  CONSTANT_String_info, CONSTANT_Integer_info, CONSTANT_Float_info, CONSTANT_Long_info, CONSTANT_Double_info,
+  CONSTANT_NameAndType_info, CONSTANT_Utf8_info, CONSTANT_MethodHandle_info, CONSTANT_MethodType_info, CONSTANT_InvokeDynamic_info);
+
 // Constant pool tags
 enum CONSTANT: u1 {
   Class = 7,
