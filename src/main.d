@@ -2,7 +2,9 @@ module djvm.main;
 
 import std;
 import djvm.loader;
+import djvm.exec;
 
 void main() {
-  loadClassFile("test/Hello.class");
+  auto res = loadClassFile("test/Hello.class");
+  execMain(res.cf, res.cp, res.meths);
 }

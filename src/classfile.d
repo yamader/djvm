@@ -168,3 +168,25 @@ struct attribute_info {
   u4 attribute_length;
   u1[0] info; // [attribute_length]
 }
+
+struct ETab {
+ align(1):
+  u2 start_pc;
+  u2 end_pc;
+  u2 handler_pc;
+  u2 catch_type;
+}
+
+struct Code_attribute {
+ align(1):
+  u2 attribute_name_index;
+  u4 attribute_length;
+  u2 max_stack;
+  u2 max_locals;
+  u4 code_length;
+  u1[0] code; // [code_length]
+  u2 exception_table_length;
+  ETab[0] exception_table; // [exception_table]
+  u2 attributes_count;
+  attribute_info[0] attributes; // [attributes_count]
+}
